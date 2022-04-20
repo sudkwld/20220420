@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geco-eSports Gaming React js</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        ul,
+        li,
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .preview_header {
+            width: 100%;
+            height: 800px;
+            background-color: aqua;
+            position: relative;
+        }
+
+        .preview_header>img[alt="slider_bg"] {
+            width: 100%;
+            height: 800px;
+        }
+
+        .preview_header>img[alt="circle"] {
+            position: absolute;
+            top: 12%;
+            left: 40%;
+            width: 700px;
+            height: 700px;
+            opacity: 0.1;
+        }
+
+        .preview_header>img[alt="slider_w"] {
+            position: absolute;
+            top: 18%;
+            right: 400px;
+            width: 550px;
+            height: 650px;
+        }
+
+        .preview_header>img[alt="slider_m"] {
+            position: absolute;
+            top: 142px;
+            right: 200px;
+            width: 440px;
+            height: 656px;
+        }
+
+        header {
+            width: 1400px;
+            height: 700px;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        header>img {
+            width: 1400px;
+            height: 100px;
+        }
+
+        .logo {
+            width: 130px;
+            height: 40px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .nav {
+            width: 700px;
+            height: 50px;
+            position: absolute;
+            top: 30px;
+            right: 200px;
+        }
+
+        .navbox {
+            width: 100px;
+            height: 40px;
+            background-color: #1c1421;
+            display: inline-flex;
+            float: left;
+            -webkit-transform: skew(-10deg);
+        }
+
+        .navbox:hover {
+            background-color: #e4a101;
+            transition: all 0.5s ease;
+        }
+
+        .navbox>h5 {
+            font-size: 13px;
+            -webkit-transform: skew(10deg);
+        }
+
+        .navbox>h5>a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: lighter;
+        }
+
+        .navbox>h5>a:hover {
+            color: #1c1421;
+            transition: all 0.5s ease;
+        }
+
+        .icon_box {
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .icon_box>a>img[alt="cart"] {
+            display: inline;
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin: 10px 0 0 10px;
+        }
+
+        .icon_box>a>img[alt="magnifying_glass"] {
+            display: inline;
+            width: 40px;
+            height: 40px;
+            float: right;
+            margin: 5px 70px 0 0;
+            background-color: #000;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .worldgaming {
+            width: 550px;
+            height: 340px;
+            float: left;
+            margin: 120px 0 0 40px;
+            position: relative;
+        }
+
+        .worldgaming>h3 {
+            font-size: 23px;
+            font-weight: bolder;
+            color: #e4a101;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+
+        .worldgaming>h5 {
+            font-size: 65px;
+            color: #fff;
+            font-weight: bolder;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .worldgaming>h5>span {
+            color: #e4a101;
+        }
+
+        .worldgaming>p {
+            font-size: 13px;
+            color: #fff;
+            position: absolute;
+            top: 215px;
+            left: 0;
+        }
+
+        .worldgaming>button {
+            width: 150px;
+            height: 50px;
+            background-color: #e4a101;
+            border: none;
+            position: absolute;
+            bottom: 0px;
+            left: 30px;
+            -webkit-transform: skew(-10deg);
+        }
+
+        button>a {
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bolder;
+            color: #000;
+        }
+
+        section {
+            width: 100%;
+            height: 4700px;
+            background-color: purple;
+        }
+
+        .released_games {
+            width: 1260px;
+            height: 800px;
+            margin: 0 auto;
+            position: relative;
+            background-color: seagreen;
+        }
+
+        .for_gamers {
+            width: 100%;
+            height: 700px;
+            background-color: peru;
+        }
+
+        .for_gamers img {
+            width: 100%;
+            height: 700px;
+        }
+
+        .just_games {
+            width: 1260px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: yellowgreen;
+        }
+
+
+        .worlds_meet {
+            width: 100%;
+            height: 800px;
+            background-color: violet;
+        }
+
+        .worlds_meet img {
+            width: 100%;
+            height: 800px;
+        }
+
+        .gaming_products {
+            width: 100%;
+            height: 800px;
+            background-color: rgb(61, 61, 61);
+        }
+
+        .latest_news {
+            width: 1260px;
+            height: 1000px;
+            margin: 0 auto;
+            background-color: sienna;
+            display: flex;
+        }
+
+
+        footer {
+            width: 100%;
+            height: 700px;
+            position: relative;
+            background-color: blueviolet;
+        }
+
+        footer>img[alt="footer_bg"] {
+            width: 100%;
+            height: 100%;
+        }
+
+        footer>img[alt="footer_fire_left"] {
+            position: absolute;
+            left: 80px;
+            bottom: 0;
+        }
+
+        footer>img[alt="footer_fire_right"] {
+            position: absolute;
+            right: 80px;
+            bottom: 0;
+        }
+
+        .footer_box {
+            width: 1260px;
+            height: 330px;
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        .geco {
+            width: 330px;
+            height: 330px;
+            float: left;
+        }
+
+        .geco>p {
+            color: #90949c;
+            font-size: 14px;
+        }
+
+        .gecobox {width: 330px; height: 75px; display:flex; flex-direction:column;}
+
+        .gecobox > p {font-size: 14px; color:#90949c; display: inline;}
+
+        .gecobox > img[alt="map"] {width:10px; height: 15px; display: inline;}
+
+        .gecobox > img[alt="headset"] {width:15px; height: 15px; display: inline;}
+
+        .gecobox > img[alt="mail"] {width:15px; height: 10px; display: inline;}
+
+        .products {width: 250px; height: 330px; background-color: blue; display: inline; float: left;}
+
+        .help {width: 250px; height: 330px; background-color: yellowgreen; display: inline; float: left;}
+
+        .follow {width: 330px; height: 165px; background-color: steelblue; display: inline; float: left;}
+
+        .newsletter {width: 330px; height: 165px; background-color: slateblue; display: inline; float: left;}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="preview_header">
+        <img src="img/slider_bg02.jpg" alt="slider_bg">
+        <img src="img/slider_circle.png" alt="circle">
+        <img src="img/slider_img02.png" alt="slider_w">
+        <img src="img/background-img.png" alt="slider_m">
+
+        <header>
+            <img src="img/header_bg.jpg" alt="header_bg">
+
+            <div class="logo">
+                <a href="#"><img src="img/logo.png"></a>
+            </div>
+
+            <div class="nav">
+
+                <div class="navbox">
+                    <h5><a href="#">HOME</a></h5>
+                </div>
+
+                <div class="navbox">
+                    <h5><a href="#">PAGES</a></h5>
+                </div>
+
+                <div class="navbox">
+                    <h5><a href="#">OVERVIEW</a></h5>
+                </div>
+
+                <div class="navbox">
+                    <h5><a href="#">COMMUNITY</a></h5>
+                </div>
+
+                <div class="navbox">
+                    <h5><a href="#">STORE</a></h5>
+                </div>
+
+                <div class="navbox">
+                    <h5><a href="#">BLOG</a></h5>
+                </div>
+
+                <div class="navbox">
+                    <h5><a href="#">CONTACT</a></h5>
+                </div>
+
+            </div>
+
+            <div class="icon_box">
+                <a href="#"><img src="img/icon_cart.png" alt="cart"></a>
+                <a href="#"><img src="img/icon_magnifying_glass.png" alt="magnifying_glass"></a>
+            </div>
+
+            <div class="worldgaming">
+                <h3>world gaming</h3>
+                <h5>Create <span>Modern</span><br>Warfare</h5>
+                <p>Find technology or people for digital progects in public sector and<br>find an individual specialist
+                    develope researcher.</p>
+
+                <button><a href="#">READ MORE</a></button>
+            </div>
+
+        </header>
+
+    </div>
+
+    <section>
+        <div class="released_games">
+
+        </div>
+
+        <div class="for_gamers">
+            <img src="img/just_gamer_bg.jpg" alt="just_gamer_bg">
+        </div>
+
+        <div class="just_games">
+
+        </div>
+
+        <div class="worlds_meet">
+            <img src="img/cta_bg.jpg" alt="cta_bg">
+        </div>
+
+        <div class="gaming_products">
+
+        </div>
+
+        <div class="latest_news">
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <img src="img/footer_bg.jpg" alt="footer_bg">
+
+        <img src="img/footer_fire.png" alt="footer_fire_left">
+        <img src="img/footer_fire.png" alt="footer_fire_right">
+
+        <div class="footer_box">
+            <div class="geco">
+                <a href="#"><img src="img/logo.png" alt="logo"></a>
+                <p>Gemas marketplace the release etras<br> thats sheets conting passag.</p>
+
+                <div class="gecobox">
+                    <img src="img/map.png" alt="map"><p>Address : PO Box W75 Street lan West new queens</p>
+                </div>
+
+                <div class="gecobox">
+                    <img src="img/headset.png" alt="headset"><p>Phone : +24 1245 654 235</p>
+                </div>
+                    
+                <div class="gecobox">
+                    <img src="img/mail.png" alt="mail"><p>Email : info@exemple.com</p>
+                </div>
+            </div>
+
+            <div class="products">
+                <h2>Products</h2>
+
+                <h3>Graphics (26)</h3>
+                <h3>Backgrounds (11)</h3>
+                <h3>Fonts (9)</h3>
+                <h3>Music (3)</h3>
+                <h3>Photography (3)</h3>
+            </div>
+
+            <div class="help">
+                <h2>Need Help?</h2>
+                <h3>Terms & Conditions</h3>
+                <h3>Privacy Policy</h3>
+                <h3>Refund Policy</h3>
+                <h3>Affiliate</h3>
+                <h3>FAQUse Cases</h3>
+            </div>
+
+            <div class="follow">
+                <h2>Follow us</h2>
+            </div>
+
+            <div class="newsletter">
+                <h2>Newsletter Sign Up</h2>
+                <label for="mail">메일 주소</label>
+                <input type="email" id="mail">
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>
